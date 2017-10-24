@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3"></div>
+        <div class="col-lg-6 col-md-6">
+            {{!-- Bootstrap Form --}}
+            <form action="/topics/{{posts.id}}?_method=PUT" method="POST" class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="name">{{posts.name}} <small>(Editing Titles Disabled)</small></label>
+                    {{!--<texarea class="form-control" type="text" id="name" name="topic[name]" placeholder="e.g. Climate Change"></textarea>--}}
+                    {{!--<small id="emailHelp" class="form-text text-muted">Don't be sketchy and change your topic to something completely opposite; we probably should've prevented that somehow, huh?</small>--}}
+                </div>
+                <div class="form-group">
+                    <label for="message">Edit Your Description</label>
+                    <textarea class="form-control" name="topic[body]" placeholder="Pontificate, if you will." rows="5" id="topic-body">{{posts.body}}</textarea>
+                </div>
+              <button type="submit" class="btn btn-primary" id="edit-topic-button">EDIT YOUR NUANCE</button>
+              <input type="hidden" name="_next" value="//" />
+                {{!-- Failure Form Submit --}}
+                <div class="submit-fail" style="display:none;">There was an error when attempting to submit your form.
+                <br>Email <a href="mailto:hi@elijah.io" title="Elijah's Email Address" alt="Elijah's Email Address">hi@elijah.io</a> or try again later.</div>
+                {{!-- Successful Form Submit --}}
+                <div class="submit-success" style="display:none;">Thanks! I got your message and will follow-up shortly.</div>
+            </form>
+        </div>
+        <div class="col-lg-3 col-md-3"></div>
+    </div>
+</div>

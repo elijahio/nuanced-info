@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <!-- metas -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Nuanced Info</title>
+    <meta name="description" content="Nuanced description not written yet.">
+
+    <!-- BootStrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    {{!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">--}}
+
+    <!-- Darkly BootSwatch CDN -->
+    <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
+
+    <!-- Moment JS -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.18.1/moment.min.js"></script>
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    
+    {{!--Fonts--}}
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    {{!--CSS Specification--}}
+    {{!--font-family: 'Permanent Marker', cursive;--}}
+    
+    {{!--Font Awesome Icons--}}
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    {{!--Favicons--}}
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/manifest.json">
+    <link rel="mask-icon" href="/assets/images/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <meta name="msapplication-config" content="/assets/images/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    
+</head>
+    <body id="top-of-page">
+        <nav class="navbar navbar navbar-default">
+            <div class="container" id="header-container">
+                <div class="col-md-3" id="logo">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	                       <span class="sr-only">Toggle navigation</span>
+	                       <span class="icon-bar"></span>
+	                       <span class="icon-bar"></span>
+	                       <span class="icon-bar"></span>
+	                    </button>
+                        <a href="/" title="Nuanced • Home" alt="Nuanced • Home"><img src="/assets/images/logo.png"></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-9">
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="/topics">TRENDING</a></li>
+                            <li><a href="/topics/new">CREATE</a></li>
+                            <li><a href="/about">ABOUT</a></li>
+                            {{#if currentUser}}
+                                <li id="logout-icon"><a href="/logout"><span style="font-size: 10px; padding-right: 2px; margin-left: 10px;">LOGOUT&nbsp;</span><i class="fa fa-lock" aria-hidden="true"></i></a></li>
+                            {{else}}
+                                <li><a href="/login"><span style="font-size: 10px; padding-right: 2px; margin-left: 10px;">LOGIN&nbsp;</span><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+                                <li><a class="btn-default registerButton" id="get-a-quote" href="/register">REGISTER</a></li>
+                            {{/if}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        {{#if error}}
+            <div class="container">
+                <div class="alert alert-danger" role="alert">
+                    {{this.error}}
+                </div>
+            </div>
+        {{/if}}
+        
+        {{#if success}}
+            <div class="container">
+                <div class="alert alert-success" role="alert">
+                    {{this.success}}
+                </div>
+            </div>
+        {{/if}}
+            
+        <div id=wrapper>
+            {{!--Hacky Fix for Navbar to Body Spacing--}}
+            <div id="body-spacer"></div>
+    		<div class="container">{{{ body }}}</div>
+    	</div>
+		<!-- JQuery -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+        <!-- BootStrap JS -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        {{!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>--}}
+        
+        {{!--Scroll Reveal JS--}}
+        <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+        <script src="https://js.pusher.com/4.0/pusher.min.js"></script>
+        <script>
+        const pusher = new Pusher('4b478593a745f836fb29', {
+            cluster: 'us2',
+            encrypted: true
+        });
+    
+        const channel = pusher.subscribe('counter');
+    
+        channel.bind('vote', data => {
+            let elem = document.querySelector(`#vote-${data.item}`),
+                votes = parseInt(elem.innerText);
+            elem.innerText = votes + 1;
+        });
+    
+        const voteButtons = document.getElementsByClassName("vote-button");
+    
+        function voteItem() {
+            let vote_id = this.getAttribute("data-vote");
+    
+            // Make Ajax call with JavaScript Fetch API
+            fetch(`/vote?item_id=${vote_id}`)
+                .catch(e => { console.log(e); });
+        }
+    
+        // IIFE - Executes on page load
+        (function() {
+            for (var i = 0; i < voteButtons.length; i++) {
+                voteButtons[i].addEventListener('click', voteItem);
+            }
+        })();
+        </script>
+	</body>
+	<script>
+	window.sr = ScrollReveal();
+    sr.reveal('#trend1', {
+    duration: 500,
+    origin: 'left',
+    mobile: true,
+    // reset: true,
+})</script>
+</html>

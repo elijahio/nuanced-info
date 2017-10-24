@@ -1,0 +1,20 @@
+{
+  "development": {
+    "username": "ryandahlke",
+    "password": "",
+    "database": "nuance",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+      "use_env_variable": "mysql://uwpg8456d9233yhi:s871fwkng0ci6l5s@thh2lzgakldp794r.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/f3bt3tdpwpz6g0al",
+      "dialect": "mysql"
+  }
+}

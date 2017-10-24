@@ -1,0 +1,45 @@
+{
+  "name": "nuanced",
+  "version": "1.0.0",
+  "description": "A more divisive reddit.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "handlebars-helpers": "^0.9.8",
+    "helper-date": "^1.0.1",
+    "method-override": "^2.3.10",
+    "moment": "^2.19.1",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.4.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-sequelize": "^0.8.0",
+    "pg": "^7.3.0",
+    "sequelize": "^4.15.0"
+  },
+   "scripts": {
+   "start": "node server.js"
+  },
+  "engines": {
+    "node": "6.11.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RockChalkBogota/nuanced.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RockChalkBogota/nuanced/issues"
+  },
+  "homepage": "https://github.com/RockChalkBogota/nuanced#readme"
+}

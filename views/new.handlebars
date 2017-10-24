@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row" id="create-panel-row">
+        <div class="col-lg-3 col-md-3"></div>
+        <div class="col-lg-6 col-md-6">
+            <div class="panel panel-default" id="create-panel">
+            {{!--<div class="panel-heading text-center">CREATE A NUANCE</div>--}}
+            <div class="panel-body">
+                {{!-- Bootstrap Form --}}
+                <form action="/topics" method="POST" class="contact-form" id="new-topic-form">
+                    <div class="form-group">
+                        <label for="name">Your Nuanced Topic</label>
+                        <input class="form-control" type="text" id="name" name="topic[name]" placeholder="e.g. Climate Change" maxlength="30">
+                        <small id="emailHelp" class="form-text text-muted">Don't be boring. Add a topic that hasn't been added yet.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Nuanced Description</label>
+                        <textarea class="form-control" name="topic[body]" placeholder="Pontificate, if you will." rows="5" id="topic-body"></textarea>
+                    </div>
+                  <button type="submit" class="btn btn-primary" id="new-topic-button">CREATE YOUR NUANCE</button>
+                  <input type="hidden" name="_next" value="//" />
+                    {{!-- Failure Form Submit --}}
+                    <div class="submit-fail" style="display:none;">There was an error when attempting to submit your form.
+                    <br>Email <a href="mailto:hi@elijah.io" title="Elijah's Email Address" alt="Elijah's Email Address">hi@elijah.io</a> or try again later.</div>
+                    {{!-- Successful Form Submit --}}
+                    <div class="submit-success" style="display:none;">Thanks! I got your message and will follow-up shortly.</div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3"></div>
+    </div>
+</div>

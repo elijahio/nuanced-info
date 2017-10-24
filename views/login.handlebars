@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3"></div>
+        <div class="col-lg-6 col-md-6">
+          <h1 style="font-family: 'Permanent Marker', cursive; text-align: center; margin-bottom: 0px;">Welcome Back</h1>
+          <h4 style="text-align: center; margin-bottom: 30px;">Login Below</h4>
+            {{!-- Bootstrap Form --}}
+            <form action="/login" method="POST" class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="name"><small>Username</small></label>
+                    <input class="form-control"  type="text" name="username" placeholder="Enter your username here."></input>
+                    {{!--<small id="emailHelp" class="form-text text-muted">Don't be sketchy and change your topic to something completely opposite; we probably should've prevented that somehow, huh?</small>--}}
+                </div>
+                <div class="form-group">
+                    <label for="message">Password</label>
+                    <input class="form-control"  type="password" name="password" placeholder="Enter your password here." rows="5"></input>
+                </div>
+              <button type="submit" class="btn btn-primary" id="edit-topic-button">LOGIN</button></button>
+              <input type="hidden" name="_next" value="//" />
+                {{!-- Failure Form Submit --}}
+                <div class="submit-fail" style="display:none;">There was an error when attempting to submit your form.
+                <br>Email <a href="mailto:hi@elijah.io" title="Elijah's Email Address" alt="Elijah's Email Address">hi@elijah.io</a> or try again later.</div>
+                {{!-- Successful Form Submit --}}
+                <div class="submit-success" style="display:none;">Thanks! I got your message and will follow-up shortly.</div>
+            </form>
+        </div>
+        <div class="col-lg-3 col-md-3"></div>
+    </div>
+</div>
+<div>
+    <div class="row">
+        <div class="col-lg-3 col-md-3"></div>
+        <div class="col-lg-6 col-md-6">
+            <p style="text-align: right; padding-top: 15px;"><a href="/register" style="color: white;">Register Now</a></p>
+        </div>
+        <div class="col-lg-3 col-md-3"></div>
+    </div>
+</div>
